@@ -1,0 +1,25 @@
+{
+    "name": "gatolazy/strategy",
+    "description": "Example of strategy",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Gatolazy\\Strategy\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "gatolazy",
+            "email": "troppo.pigro.per.fallire@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit --testdox tests"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2"
+    }
+}
