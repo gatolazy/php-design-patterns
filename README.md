@@ -1,17 +1,17 @@
 # Design Patterns in PHP
 
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-![PHP](https://img.shields.io/badge/php->=7.4-8892bf.svg)
+![PHP](https://img.shields.io/badge/php->=8.1-8892bf.svg)
 
 
 
 ## Cosa sono
----
+   
 Si tratta di soluzioni progettuali a problemi ricorrenti.
 
 
 ## Le caratteristiche di un design pattern
----
+   
 Un Design Pattern è composto di quattro parti fondamentali:
 * Nome
 * Problema
@@ -20,32 +20,32 @@ Un Design Pattern è composto di quattro parti fondamentali:
 
 
 ## Nome
----
+   
 Una o più parole che lo identificano 
 
 
 ## Problema
----
+   
 Si tratta della descrizione della situazione nella quale il design pattern può essere applicato o in generale delle motivazioni del suo utilizzo.
 
 
 ## Soluzione
----
+   
 Si tratta della descrizione dell'insieme di classi e della interazione tra di esse che risolve il problema, senza scendere nei dettagli dell'implementazione.
 
 
 ## Conseguenze 
----
+   
 Risultati dell'applicazione del design pattern che possono influenzare la scelta di quale pattern utilizzare, oppure della implementazione in uno specifico linguaggio.
 
 
 ## A cosa servono
----
+   
 Il loro utilizzo permette di applicare soluzioni ampiamente collaudate, ottimizzando la struttura e la manutenzione del software.
 
 
 ## Classificazione dei design pattern
----
+   
 I design pattern sono classificati in base a due diversi criteri: 
 * **ambito**: specifica se il pattern si applica alle `classi` o agli `oggettti`
 * **scopo**: si tratta dell'obiettivo che il pattern punta ad ottenere: 
@@ -55,7 +55,7 @@ I design pattern sono classificati in base a due diversi criteri:
 
 
 ## Classificazione dei design patterns tabella
----
+   
 <table border="1">
     <thead>
         <tr>
@@ -129,5 +129,5 @@ I design pattern sono classificati in base a due diversi criteri:
 
 
 ## Licenza
----
+   
 Questo progetto sotto licenza MIT.
