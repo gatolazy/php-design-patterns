@@ -22,7 +22,8 @@ final class CheckoutTest extends TestCase
         $checkout->changeDeliveryStrategy(new FreeDelivery());
 
         $this->assertEquals(
-            0, $checkout->getDeliveryAmount($product),
+            0,
+            $checkout->getDeliveryAmount($product),
             'Delivery Amount should be equals to 0'
         );
     }
@@ -38,7 +39,8 @@ final class CheckoutTest extends TestCase
         $checkout = new Checkout(new StandardDelivery());
 
         $this->assertEquals(
-            2.70, $checkout->getDeliveryAmount($product),
+            2.70,
+            $checkout->getDeliveryAmount($product),
             'Delivery Amount should be equals to 2.70'
         );
     }
@@ -54,8 +56,25 @@ final class CheckoutTest extends TestCase
         $checkout = new Checkout(new StandardDelivery());
 
         $this->assertEquals(
-            6.99, $checkout->getDeliveryAmount($product),
+            6.99,
+            $checkout->getDeliveryAmount($product),
             'Delivery Amount should be equals to 6.99'
         );
+    }
+
+    public function testExceptionOnFreeDeliveryToWrongPrice(): void
+    {
+        $product = new Product(
+            34,
+            'The secrets of delivery',
+            Product::TYPE_ABIGLIAMENTO,
+            Product::SIZE_L
+        );
+
+        $checkout = new Checkout(new FreeDelivery());
+
+        $this->expectException(Exception::class);
+
+        $checkout->getDeliveryAmount($product);
     }
 }

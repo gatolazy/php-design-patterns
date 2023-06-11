@@ -1,5 +1,6 @@
 # Strategy
-
+![PHP](https://img.shields.io/badge/php->=8.1-8892bf.svg)
+![PHP](https://img.shields.io/badge/PHPUnit->=10.2-8892bf.svg)
 
 
 ## Nome
@@ -27,6 +28,8 @@ Nella implementazione della soluzione, dello Strategy pattern, entrano in gioco 
 * **StrategyConcrete**: si tratta della classe concreta che implementerà la **Strategy**, questa classe incapsula uno specifico algoritmo e di fatto rappresenta una delle strategie per risolvere uno specifico problema
 
 * **Context**: si tratta della classe che fa qualcosa di specifico, che mantiene un riferimento a una istanza della **Strategy** a cui puo assegnare runtime il valore di diverse **StrategyConcrete** in modo da usare l'algoritmo migliore in base al momento.
+
+* **Client**: si tratta di chi utilizza il **Context** e quindi le **StrategyConcrete** per risolvere uno specifico problema
 
 
 ### Esempio semplificato
@@ -144,14 +147,54 @@ $this->assertEquals(
 $checkout->changeDeliveryStrategy(new FreeDelivery());
 
 $this->assertEquals(
-    0, $checkout->getDeliveryAmount($product),
+    0, 
+    $checkout->getDeliveryAmount($product),
     'Delivery Amount should be equals to 0'
 );
 ````
 
 
-
-
 ## Conseguenze 
    
-TODO
+### Pro
+ 
+* Viene rispettata la best practice dell'incapsulamento delle parti che variano
+
+* La semplificazione del **Context** è una conseguenza dell'eliminazione di costrutti condizionali che verranno incapsulati delle varie **StrategyConcrete**
+
+* L'incapsulamento delle strategie in classi che implementano una interfaccia comune permette il disaccopiamento dalle classi che le utilizzano, migliorando la flessibilità e la manutenzione
+
+* Viene rispettato il principio Open/Close in quanto sarà possibile aggiungere nuove strategie senza apportare modifiche al **Context**
+
+
+### Contro
+
+* I **Client** devono conoscere le diverse strategie a disposizione, inoltre devono essere in grado di decidere quale utilizzare in base al momento.
+
+* Tra i possibili risvolti negativi possiamo identificare l'aumento del numero di classi, in quanto ogni algoritmo dovrà essere incapsulato all'interno di una classe.
+
+
+## Riferimenti
+Di seguito la lista delle fonti che utilizzato per studiare e realizzare l'esempio:
+
+* Teoria:
+    
+    * Web: [iluwatar/java-design-patterns - strategy](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
+    
+    * Web: [Refactoring Guru - design-patterns/strategy](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
+    
+    * Libro: [Antonio Pelleriti - Design patterns. Schemi di progettazione del software orientato agli oggetti](https://amzn.eu/d/eRg0PZ2)
+    
+    * Libro: [Matt Zandstra - PHP 8 Objects, Patterns, and Practice](https://amzn.eu/d/3F3bf13)
+
+* Esempio:
+    
+    * Web: [Writing value objects in PHP](https://dev.to/ianrodrigues/writing-value-objects-in-php-4acg)
+    
+    * Web: [Strategy in PHP](https://refactoring.guru/design-patterns/strategy/php/example#example-1)
+    
+    * Web: [Strategy Design Pattern in Java - Example Tutorial](https://www.digitalocean.com/community/tutorials/strategy-design-pattern-in-java-example-tutorial)
+    
+    * Web: [PHPUnit](https://phpunit.de/getting-started/phpunit-10.html)
+
+    * Web: [Amazon - Costi e modalità di spedizione in Italia](https://www.amazon.it/gp/help/customer/display.html?nodeId=GNWCU626A4NXEEGJ)
