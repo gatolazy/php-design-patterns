@@ -181,7 +181,7 @@ Di seguito la lista delle fonti che utilizzato per studiare e realizzare l'esemp
     
     * Web: [iluwatar/java-design-patterns - strategy](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
     
-    * Web: [Refactoring Guru - design-patterns/strategy](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
+    * Web: [Refactoring Guru - design-patterns/strategy](https://refactoring.guru/design-patterns/strategy)
     
     * Libro: [Antonio Pelleriti - Design patterns. Schemi di progettazione del software orientato agli oggetti](https://amzn.eu/d/eRg0PZ2)
     
